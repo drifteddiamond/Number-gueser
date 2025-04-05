@@ -130,29 +130,40 @@
         padding: 8px;
     }
 
-    #totalscorelabel, #totalscore {
-        display: inline-block;
-        font-size: 1.5rem;
-        text-align: center;
-        width: 100%;
-        margin: 8px 0;
-        padding: 0;
-    }
-
-    #roundscorelabel, #roundscore {
-        display: inline-block;
-        font-size: 1.5rem;
-        text-align: center;
-        width: 100%;
-        margin: 8px 0;
-        padding: 0;
-    }
-
     #totalscorelabel {
-        margin-top: 16px; /* Add spacing above the total score */
+        display: inline-block;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        margin: 8px 0;
+        padding: 0;
+    }
+
+    #totalscore {
+        font-size: 1.5rem; 
+        text-align: center; 
+        display: inline-block;
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
     }
 
     #roundscorelabel {
-        margin-top: 16px; /* Add spacing above the round score */
+        display: inline-block;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        margin: 8px 0;
+        padding: 0;
     }
+
+    #roundscore {
+        font-size: 1.5rem; 
+        text-align: center; 
+        display: inline-block;
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+
 }
