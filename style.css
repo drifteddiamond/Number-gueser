@@ -98,46 +98,96 @@
 
 /* Portrait phones */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
+    #header,
+    #input,
+    #output,
+    #guessput,
+    #roundscorelabel,
+    #totalscorelabel {
+      font-size: 1.5rem;
+      width: 90%;
+      padding: 8px;
+    }
+  
+    /* Reorder visually by positioning header first */
     #header {
       font-size: 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: static;
       transform: none;
-      margin: 0;
-      padding: 10px;
-      background-color: #fff;
-      z-index: 10;
+      margin: 10px auto 20px auto;
+      display: block;
     }
   
-    body {
-      padding-top: 60px; /* prevent overlap */
+    #input,
+    #guessput,
+    #output {
+      top: auto;
+      position: static;
+      transform: none;
+      margin: 10px auto;
+      display: block;
     }
   
-    /* rest of portrait rules stay unchanged */
+    #roundscorelabel,
+    #totalscorelabel {
+      font-size: 1.5rem;
+      position: static;
+      transform: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    #totalscore,
+    #roundscore {
+      font-size: 1.5rem;
+      display: inline;
+    }
   }
   
+  /* Landscape phones */
+  @media only screen and (max-height: 500px) and (orientation: landscape) {
+    #header,
+    #input,
+    #output,
+    #guessput,
+    #roundscorelabel,
+    #totalscorelabel {
+      font-size: 1.8rem;
+      width: 80%;
+      padding: 6px;
+    }
   
- /* Landscape phones */
-@media only screen and (max-height: 500px) and (orientation: landscape) {
     #header {
       font-size: 2.2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      position: static;
       transform: none;
-      margin: 0;
-      padding: 10px;
-      background-color: #fff;
-      z-index: 10;
+      margin: 8px auto 16px auto;
+      display: block;
     }
   
-    body {
-      padding-top: 60px; /* prevent overlap */
+    #input,
+    #guessput,
+    #output {
+      top: auto;
+      position: static;
+      transform: none;
+      margin: 8px auto;
+      display: block;
     }
   
-    /* rest of landscape rules stay unchanged */
+    #roundscorelabel,
+    #totalscorelabel {
+      font-size: 1.8rem;
+      position: static;
+      transform: none;
+      margin-top: 8px;
+      text-align: center;
+    }
+  
+    #totalscore,
+    #roundscore {
+      font-size: 1.8rem;
+      display: inline;
+    }
   }
   
