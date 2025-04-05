@@ -131,38 +131,19 @@
     }
 
     #totalscorelabel, #totalscore, #roundscorelabel, #roundscore {
+        display: block;
         font-size: 1.5rem;
-        display: inline-block;
-        text-align: left;
-        width: auto;
-        padding: 8px;
+        text-align: center;
+        width: 100%;
+        margin: 8px 0;
+        padding: 0;
     }
 
     #totalscorelabel {
-        position: absolute;
-        top: 65%;
-        left: 25%; /* Adjusted for alignment */
-        transform: translateX(0);
-    }
-
-    #totalscore {
-        position: absolute;
-        top: 65%;
-        left: 50%; /* Adjusted to stay on the same line */
-        transform: translateX(-50%);
+        margin-top: 16px; /* Add spacing above the total score */
     }
 
     #roundscorelabel {
-        position: absolute;
-        top: 72%;
-        left: 25%; /* Adjusted for alignment */
-        transform: translateX(0);
-    }
-
-    #roundscore {
-        position: absolute;
-        top: 72%;
-        left: 50%; /* Adjusted to stay on the same line */
-        transform: translateX(-50%);
+        margin-top: 16px; /* Add spacing above the round score */
     }
 }
