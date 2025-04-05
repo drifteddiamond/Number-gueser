@@ -117,42 +117,126 @@
     }
 }
 
-/* Landscape styles for phones */
-@media (max-width: 768px) and (orientation: landscape) {
-    #header {
-        font-size: 1.2rem;
-        width: 100%;
-        padding: 5px;
-    }
-
-    #input, #output, #guessput, #roundscore, #totalscore {
-        font-size: 1rem;
-        width: 70%;
-        padding: 5px;
-    }
-
-    #roundscorelabel, #totalscorelabel {
-        font-size: 1rem;
-        width: 70%;
-    }
+/* Default styles for desktops and larger screens */
+#header {
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 99%;
+    margin: 0;
+    color: #333;
+    background-color: #ffffff;
+    padding: 10px;
 }
 
-/* Landscape styles for phones (latest iPhones and Androids) */
-/* @media (max-width: 900px) and (orientation: landscape) {
+#input {
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    margin: 0;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+#output {
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    margin: 0;
+    color: #333;
+    padding: 10px;
+}
+
+#guessput {
+    font-size: 3.8rem;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    margin: 0;
+    color: #333;
+    padding: 10px;
+}
+
+#totalscore, #roundscore {
+    font-size: 3.8rem;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    color: #333;
+    padding: 10px;
+}
+
+#roundscorelabel {
+    font-size: 3.8rem;
+    text-align: center;
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    margin: 0;
+    color: #333;
+    padding: 10px;
+}
+
+#totalscorelabel {
+    font-size: 3.8rem;
+    text-align: center;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    margin: 0;
+    color: #333;
+    padding: 10px;
+}
+
+/* Universal styles for all phones */
+@media (max-width: 900px) {
+    #header, #input, #output, #guessput, #totalscore, #roundscore, #roundscorelabel, #totalscorelabel {
+        font-size: 1.2rem; /* Smaller font size for phones */
+        width: 90%; /* Full width with small margins */
+        padding: 5px; /* Less padding for better fit */
+        margin: 5px auto; /* Centering elements vertically */
+    }
+
     #header {
-        font-size: 1.2rem;
-        width: 100%;
-        padding: 5px;
+        top: 2%; /* Adjust header placement */
     }
 
-    #input, #output, #guessput {
-        font-size: 1rem;
-        width: 80%;
-        padding: 5px;
+    #input {
+        top: 45%; /* Adjust input positioning */
     }
 
-    #roundscorelabel, #totalscorelabel {
-        font-size: 1rem;
-        width: 80%; 
+    #output {
+        top: 55%; /* Adjust output positioning */
     }
-} */
+
+    #guessput {
+        top: 35%; /* Adjust guess positioning */
+    }
+
+    #totalscorelabel {
+        top: 75%; /* Adjust score labels for phones */
+    }
+
+    #roundscorelabel {
+        top: 80%; /* Adjust round score placement */
+    }
+}
