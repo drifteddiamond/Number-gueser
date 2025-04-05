@@ -130,7 +130,16 @@
         padding: 8px;
     }
 
-    #totalscorelabel, #totalscore, #roundscorelabel, #roundscore {
+    #totalscorelabel, #totalscore {
+        display: block;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        margin: 8px 0;
+        padding: 0;
+    }
+
+    #roundscorelabel, #roundscore {
         display: block;
         font-size: 1.5rem;
         text-align: center;
