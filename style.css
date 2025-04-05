@@ -131,7 +131,7 @@
     }
 
     #totalscorelabel, #totalscore {
-        display: block;
+        display: inline-block;
         font-size: 1.5rem;
         text-align: center;
         width: 100%;
@@ -140,7 +140,7 @@
     }
 
     #roundscorelabel, #roundscore {
-        display: block;
+        display: inline-block;
         font-size: 1.5rem;
         text-align: center;
         width: 100%;
