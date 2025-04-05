@@ -121,7 +121,7 @@
   
     #header {
       font-size: 2rem;
-      position: static;
+      position: top;
       transform: none;
       margin-bottom: 20px;
     }
@@ -167,7 +167,7 @@
   
     #header {
       font-size: 2.2rem;
-      position: static;
+      position: top;
       transform: none;
       margin-bottom: 16px;
     }
