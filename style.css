@@ -209,7 +209,7 @@
 
 /* Universal styles for all phones */
 @media (max-width: 900px) {
-    #header, #input, #output, #guessput, #totalscore, #roundscore, #roundscorelabel, #totalscorelabel {
+    #header, #input, #output, #guessput, #roundscorelabel, #totalscorelabel {
         font-size: 1.2rem; /* Smaller font size for phones */
         width: 90%; /* Full width with small margins */
         padding: 5px; /* Less padding for better fit */
