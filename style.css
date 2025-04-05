@@ -124,14 +124,45 @@
         padding: 8px;
     }
 
-    #input, #output, #guessput, #roundscore, #totalscore {
+    #input, #output, #guessput {
         font-size: 1.5rem;
         width: 80%;
         padding: 8px;
     }
 
-    #roundscorelabel, #totalscorelabel {
+    #totalscorelabel, #totalscore, #roundscorelabel, #roundscore {
         font-size: 1.5rem;
-        width: 80%;
+        display: inline-block;
+        text-align: left;
+        width: auto;
+        padding: 8px;
+    }
+
+    #totalscorelabel {
+        position: absolute;
+        top: 65%;
+        left: 25%; /* Adjusted for alignment */
+        transform: translateX(0);
+    }
+
+    #totalscore {
+        position: absolute;
+        top: 65%;
+        left: 50%; /* Adjusted to stay on the same line */
+        transform: translateX(-50%);
+    }
+
+    #roundscorelabel {
+        position: absolute;
+        top: 72%;
+        left: 25%; /* Adjusted for alignment */
+        transform: translateX(0);
+    }
+
+    #roundscore {
+        position: absolute;
+        top: 72%;
+        left: 50%; /* Adjusted to stay on the same line */
+        transform: translateX(-50%);
     }
 }
