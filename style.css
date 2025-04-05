@@ -1,3 +1,4 @@
+/* Default styles for computers */
 #header {
     font-size: 2.5rem; 
     text-align: center; 
@@ -94,4 +95,24 @@
     margin: 0; 
     color: #333; 
     padding: 10px; 
+}
+
+/* Styles for phones (screen width less than or equal to 768px) */
+@media (max-width: 768px) {
+    #header {
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 5px;
+    }
+
+    #input, #output, #guessput, #roundscore, #totalscore {
+        font-size: 1.2rem;
+        width: 90%;
+        padding: 5px
+    }
+
+    #roundscorelabel, #totalscorelabel {
+        font-size: 1.2rem;
+        width: 90%;
+    }
 }
