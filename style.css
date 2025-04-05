@@ -136,3 +136,23 @@
         width: 70%;
     }
 }
+
+/* Landscape styles for phones (latest iPhones and Androids) */
+@media (max-width: 900px) and (orientation: landscape) {
+    #header {
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 5px;
+    }
+
+    #input, #output, #guessput, #roundscore, #totalscore {
+        font-size: 1rem;
+        width: 80%;
+        padding: 5px;
+    }
+
+    #roundscorelabel, #totalscorelabel {
+        font-size: 1rem;
+        width: 80%; 
+    }
+}
