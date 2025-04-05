@@ -98,43 +98,60 @@
 
 /* Portrait phones */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
-    #header,
-    #input,
-    #output,
-    #guessput,
-    #roundscorelabel,
-    #totalscorelabel {
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    #header {
+      order: 1;
+      font-size: 2rem;
+      width: 90%;
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    #input {
+      order: 2;
       font-size: 1.5rem;
       width: 90%;
       padding: 8px;
+      margin-bottom: 10px;
     }
   
-    /* Reorder visually by positioning header first */
-    #header {
-      font-size: 2rem;
-      position: static;
-      transform: none;
-      margin: 10px auto 20px auto;
-      display: block;
-    }
-  
-    #input,
-    #guessput,
-    #output {
-      top: auto;
-      position: static;
-      transform: none;
-      margin: 10px auto;
-      display: block;
-    }
-  
-    #roundscorelabel,
-    #totalscorelabel {
+    #guessput {
+      order: 3;
       font-size: 1.5rem;
-      position: static;
-      transform: none;
-      margin-top: 10px;
+      width: 90%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+  
+    #output {
+      order: 4;
+      font-size: 1.5rem;
+      width: 90%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+  
+    #roundscorelabel {
+      order: 5;
+      font-size: 1.5rem;
       text-align: center;
+      width: 90%;
+      margin-top: 10px;
+    }
+  
+    #totalscorelabel {
+      order: 6;
+      font-size: 1.5rem;
+      text-align: center;
+      width: 90%;
+      margin-top: 10px;
     }
   
     #totalscore,
@@ -146,42 +163,60 @@
   
   /* Landscape phones */
   @media only screen and (max-height: 500px) and (orientation: landscape) {
-    #header,
-    #input,
-    #output,
-    #guessput,
-    #roundscorelabel,
-    #totalscorelabel {
-      font-size: 1.8rem;
-      width: 80%;
-      padding: 6px;
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
     }
   
     #header {
+      order: 1;
       font-size: 2.2rem;
-      position: static;
-      transform: none;
-      margin: 8px auto 16px auto;
-      display: block;
-    }
-  
-    #input,
-    #guessput,
-    #output {
-      top: auto;
-      position: static;
-      transform: none;
-      margin: 8px auto;
-      display: block;
-    }
-  
-    #roundscorelabel,
-    #totalscorelabel {
-      font-size: 1.8rem;
-      position: static;
-      transform: none;
-      margin-top: 8px;
+      width: 80%;
       text-align: center;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    #input {
+      order: 2;
+      font-size: 1.8rem;
+      width: 80%;
+      padding: 6px;
+      margin-bottom: 8px;
+    }
+  
+    #guessput {
+      order: 3;
+      font-size: 1.8rem;
+      width: 80%;
+      padding: 6px;
+      margin-bottom: 8px;
+    }
+  
+    #output {
+      order: 4;
+      font-size: 1.8rem;
+      width: 80%;
+      padding: 6px;
+      margin-bottom: 8px;
+    }
+  
+    #roundscorelabel {
+      order: 5;
+      font-size: 1.8rem;
+      text-align: center;
+      width: 80%;
+      margin-top: 8px;
+    }
+  
+    #totalscorelabel {
+      order: 6;
+      font-size: 1.8rem;
+      text-align: center;
+      width: 80%;
+      margin-top: 8px;
     }
   
     #totalscore,
