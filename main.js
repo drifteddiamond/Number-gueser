@@ -76,7 +76,7 @@ addEventListener("DOMContentLoaded", (event) => {
                 const currentLevel = Math.floor(playerScore / 10000);
     writelevel(`Level: ${currentLevel}`);
     deleteCookie('level'); // Remove any old cookie
-createCookie('level', currentLevel);
+createCookie('level', currentLevel, 10000);
 
             }
                 else {
@@ -115,7 +115,7 @@ createCookie('level', currentLevel);
             currentscore = 0
         }
         deleteCookie('score'); // Delete old cookie (if exists)
-    createCookie('score', currentscore); // Create a new one with updated score
+    createCookie('score', currentscore, 10000); // Create a new one with updated score
     return currentscore;
 
     }

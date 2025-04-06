@@ -239,6 +239,6 @@
 } 
 #gonecookies:hover {
     background-color: #727272; /* Hover background color */
-    color: #333; /* Optional text color change */
+    color: #0f0f0f; /* Optional text color change */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
