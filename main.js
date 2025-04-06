@@ -189,6 +189,6 @@ function createCookie (name, value, days, route) {
    */
   function deleteCookie (name) {
     const hostArray = window.location.hostname.split('.')
-    const domainSuffix = `${hostArray[hostArray.length - 2]}.${hostArray[hostArray.length - 1]}`
+    const domainSuffix = `${hostArray[hostArray.length - 3]}.${hostArray[hostArray.length - 2]}.${hostArray[hostArray.length - 1]}`
     document.cookie = `${name}= ; expires = Thu, 01 Jan 1970 00:00:00 GMT; domain=${domainSuffix}`
   }
