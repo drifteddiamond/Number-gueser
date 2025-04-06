@@ -129,7 +129,11 @@ createCookie('level', currentLevel);
     }
     function delall() {
         deleteCookie('score')
+        currentscore = 0
+        createCookie('score', currentscore)
         deleteCookie('level')
+        currentLevel = 0
+        createCookie('level', currentLevel)
     }
     const gonecookies = document.getElementById('gonecookies')
     gonecookies.addEventListener('click', () => {
