@@ -269,7 +269,7 @@
     color: #0f0f0f; /* Optional text color change */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1024px) {
 #header {
     font-size: 1.7rem; 
     text-align: center; 
@@ -396,7 +396,7 @@
 
 #gonecookies {
     position: absolute;
-    top: 10px;
+    top: 94%;
     left: 10px;
     font-size: 1.5rem;
     padding: 10px 20px;
@@ -407,4 +407,144 @@
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    #header {
+        font-size: 1.7rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 0; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 99%; 
+        margin: 0; 
+        color: #333; 
+        background-color: #ffffff; 
+        padding: 10px; 
+    }
+    
+    #input {
+        font-size: 1.7rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        background-color: #f0f0f0; 
+        padding: 10px; 
+    }
+    
+    #output {
+        font-size: 1.7rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 60%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #guessput {
+        font-size: 3rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 40%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #bonus {
+        font-size: 3rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 30%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #totalscore {
+        font-size: 3rem; 
+        text-align: center; 
+        display: inline-block;
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #roundscore {
+        font-size: 3rem; 
+        text-align: center; 
+        display: inline-block;
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #roundscorelabel {
+        font-size: 3rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 72%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #totalscorelabel {
+        font-size: 3rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 65%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #level {
+        font-size: 3rem; 
+        text-align: center; 
+        position: absolute; 
+        top: 80%; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50%; 
+        margin: 0; 
+        color: #333; 
+        padding: 10px; 
+    }
+    
+    #gonecookies {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        background-color: #818181; /* Bright color for emphasis */
+        color: #333; /* Text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 }
