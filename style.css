@@ -402,7 +402,7 @@
 
 #gonecookies {
     position: absolute;
-    bottom: 10px;
+    top: 90%;
     left: 10px;
     font-size: 1.5rem;
     padding: 10px 20px;
