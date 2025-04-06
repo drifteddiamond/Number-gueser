@@ -405,28 +405,29 @@ html, body {
     padding: 10px; 
 }
 
-#gonecookies {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    background-color: #818181;
-    color: #fff;
-    border-radius: 5px;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    white-space: nowrap;
-    user-select: none;
-    z-index: 9999;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    #gonecookies {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      background-color: #818181;
+      color: #fff;
+      border-radius: 5px;
+      display: inline-block;         /* ⬅️ This prevents block stretch */
+      width: auto;                   /* ⬅️ Prevents full-width */
+      height: auto;                  /* ⬅️ Prevents vertical stretch */
+      line-height: 1.2;              /* ⬅️ Clean spacing inside */
+      text-align: center;
+      white-space: nowrap;
+      user-select: none;
+      z-index: 9999;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
   }
   
-  #gonecookies:hover {
-    background-color: #6e6e6e;
-  }
   
 }
 
