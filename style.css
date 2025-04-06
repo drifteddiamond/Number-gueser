@@ -405,20 +405,27 @@ html, body {
     padding: 10px; 
 }
 
-#gonecookies {
-    position: absolute;
-    bottom: 10px;       /* Correct way to pin it to bottom */
-    left: 10px;
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    width: fit-content;
-    background-color: #818181;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    #gonecookies {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      width: auto;
+      max-width: 90%;
+      height: auto;
+      background-color: #818181;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
   }
+  
 
 
 
