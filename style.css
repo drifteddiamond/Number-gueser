@@ -402,9 +402,9 @@
 
 #gonecookies {
     position: absolute;
-    top: 90%;
+    top: 10px;
     left: 10px;
-    font-size: 1.5rem;
+    font-size: 0.5rem;
     padding: 10px 20px;
     background-color: #818181; /* Bright color for emphasis */
     color: #333; /* Text color */
