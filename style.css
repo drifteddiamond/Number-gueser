@@ -162,27 +162,19 @@
     }
 
     #gonecookies {
-        position: fixed; /* Keeps it anchored to the bottom-left corner */
-        bottom: 10px; /* 10px from the bottom */
-        left: 10px; /* 10px from the left */
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
         font-size: 0.5rem;
-        padding: 5px 10px; /* Adjust padding to avoid excessive size */
-        width: auto; /* Allows the width to adjust to the text content */
-        max-width: 200px; /* Prevents it from stretching too wide */
-        height: auto; /* Ensures height adjusts dynamically to content */
-        text-align: center; /* Aligns text centrally */
-        background-color: #818181; /* Bright background color */
+        padding: 10px 20px;
+        background-color: #818181; /* Bright color for emphasis */
         color: #333; /* Text color */
         border: none;
-        border-radius: 5px; /* Smooth corners */
+        border-radius: 5px;
         cursor: pointer;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        box-sizing: border-box; /* Includes padding in size calculation */
-        overflow: hidden; /* Prevents any content overflow */
-        display: inline-block; /* Ensures the button doesn’t stretch vertically */
-    }
     
-    
+    }   
 }
 /* Styles for landscape phones */
 @media (max-width: 768px) and (orientation: landscape) {
