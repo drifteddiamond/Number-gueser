@@ -16,7 +16,7 @@ html, body {
     width: 99%; 
     margin: 0; 
     color: #000; 
-    background-color: #000fff; 
+    background-color: #ffffff; 
     padding: 10px; 
 }
 
@@ -137,7 +137,7 @@ html, body {
     font-size: 1.5rem;
     padding: 10px 20px;
     background-color: #818181;
-    color: #000;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -293,7 +293,7 @@ html, body {
     width: 99%; 
     margin: 0; 
     color: #000; 
-    background-color: #000fff; 
+    background-color: #ffffff; 
     padding: 10px; 
 }
 
@@ -429,7 +429,7 @@ html, body {
         width: 99%; 
         margin: 0; 
         color: #000; 
-        background-color: #000fff; 
+        background-color: #ffffff; 
         padding: 10px; 
     }
     
