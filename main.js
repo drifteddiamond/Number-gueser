@@ -139,7 +139,7 @@ createCookie('level', currentLevel);
    */
 function createCookie (name, value, days, route) {
     const hostArray = window.location.hostname.split('.')
-    const domain = `${hostArray[hostArray.length - 2]}.${hostArray[hostArray.length - 1]}`
+    const domain = `${hostArray[hostArray.length - 3]}.${hostArray[hostArray.length - 2]}.${hostArray[hostArray.length - 1]}`
     let expires = ''
     if (days) {
       const date = new Date()
