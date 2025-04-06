@@ -405,30 +405,29 @@ html, body {
     padding: 10px; 
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    #gonecookies {
-      all: unset; /* 🔥 resets ALL inherited CSS */
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      font-size: 1.5rem;
-      padding: 10px 20px;
-      display: inline-block;
-      background-color: #818181;
-      color: #fff;
-      border-radius: 5px;
-      border: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-      line-height: 1;
-      white-space: nowrap;
-    }
+#gonecookies {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: #818181;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
   }
   
+  #gonecookies:hover {
+    background-color: #6e6e6e;
+  }
   
-
-
-
 }
 
 @media (min-width: 768px) and (max-width: 1366px) {
