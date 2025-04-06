@@ -269,7 +269,7 @@
     color: #0f0f0f; /* Optional text color change */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 #header {
     font-size: 1.7rem; 
     text-align: center; 
