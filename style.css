@@ -269,3 +269,109 @@
     color: #0f0f0f; /* Optional text color change */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
+
+/* iPad Portrait (768px width) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    #header,
+    #input,
+    #output,
+    #guessput,
+    #bonus,
+    #totalscore,
+    #roundscore,
+    #roundscorelabel,
+    #totalscorelabel,
+    #level {
+        font-size: 2rem;
+        width: 80%;
+        padding: 10px;
+    }
+
+    #gonecookies {
+        top: 90%;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* iPad Landscape (1024px width) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    #header,
+    #input,
+    #output,
+    #guessput,
+    #bonus,
+    #totalscore,
+    #roundscore,
+    #roundscorelabel,
+    #totalscorelabel,
+    #level {
+        font-size: 2.2rem;
+        width: 85%;
+        padding: 10px;
+    }
+
+    #gonecookies {
+        top: 10px;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+
+/* iPad Pro 11" Portrait */
+@media only screen 
+  and (min-device-width: 820px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    #header,
+    #input,
+    #output,
+    #guessput,
+    #bonus,
+    #roundscore,
+    #totalscore,
+    #roundscorelabel,
+    #totalscorelabel,
+    #level {
+        font-size: 2.4rem;
+        width: 85%;
+        padding: 12px;
+    }
+
+    #gonecookies {
+        top: 92%;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* iPad Pro 11" Landscape */
+@media only screen 
+  and (min-device-width: 820px) 
+  and (max-device-width: 834px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    #header,
+    #input,
+    #output,
+    #guessput,
+    #bonus,
+    #roundscore,
+    #totalscore,
+    #roundscorelabel,
+    #totalscorelabel,
+    #level {
+        font-size: 2.6rem;
+        width: 80%;
+        padding: 12px;
+    }
+
+    #gonecookies {
+        top: 10px;
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+}
