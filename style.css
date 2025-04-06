@@ -1,11 +1,14 @@
 html, body {
     height: 100%;
+    position: relative;
+}
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     position: relative;
   }
   
-
 /* Default styles for computers */
 #header {
     font-size: 2.5rem; 
