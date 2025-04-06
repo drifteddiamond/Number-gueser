@@ -413,7 +413,7 @@ html, body {
 
 #gonecookies {
     position: fixed;
-    bottom: 10px;
+    top: 1014px;
     left: 10px;
     padding: 10px 16px;
     font-size: 1rem;
