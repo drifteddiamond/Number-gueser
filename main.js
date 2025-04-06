@@ -246,26 +246,31 @@ createCookie('level', currentLevel, 10000);
    * @param  {number} days
    * @param  {string} route
    */
-function createCookie (name, value, days, route) {
-    const hostArray = window.location.hostname.split('.')
-    const domain = `${hostArray[hostArray.length - 3]}.${hostArray[hostArray.length - 2]}.${hostArray[hostArray.length - 1]}`
-    let expires = ''
+function createCookie(name, value, days, route) {
+    const hostArray = window.location.hostname.split('.');
+    let domainPart = '';
+
+    // Only set domain if it's at least 3 parts (e.g. sub.example.com)
+    if (hostArray.length >= 3) {
+        domainPart = `; domain=${hostArray.slice(-3).join('.')}`;
+    }
+
+    let expires = '';
     if (days) {
-      const date = new Date()
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
-      expires = '; expires=' + date.toGMTString()
-    } else {
-      expires = ''
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = '; expires=' + date.toGMTString();
     }
 
-    let path = 'path=/'
+    let path = 'path=/';
     if (route !== undefined) {
-      path = 'path=' + route
+        path = 'path=' + route;
     }
 
-    const cookie = `${name}=${value}; ${expires}; path=${path}; domain=${domain}`
-    document.cookie = cookie
-  }
+    const cookie = `${name}=${value}${expires}; ${path}${domainPart}`;
+    document.cookie = cookie;
+}
+
 
   /**
    * Reads a cookie and returns the value from the client browser
@@ -287,8 +292,14 @@ function createCookie (name, value, days, route) {
    * Deletes a cookie by name from the client browser
    * @param  {string} name
    */
-  function deleteCookie (name) {
-    const hostArray = window.location.hostname.split('.')
-    const domainSuffix = `${hostArray[hostArray.length - 3]}.${hostArray[hostArray.length - 2]}.${hostArray[hostArray.length - 1]}`
-    document.cookie = `${name}= ; expires = Thu, 01 Jan 1970 00:00:00 GMT; domain=${domainSuffix}`
-  }
+  function deleteCookie(name) {
+    const hostArray = window.location.hostname.split('.');
+    let domainPart = '';
+
+    // Only set domain if it's at least 3 parts (e.g. sub.example.com)
+    if (hostArray.length >= 3) {
+        domainPart = `; domain=${hostArray.slice(-3).join('.')}`;
+    }
+
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domainPart}`;
+}
