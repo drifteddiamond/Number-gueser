@@ -122,12 +122,6 @@
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-    #gonecookies:hover {
-        background-color: #727272; /* Hover background color */
-        color: #333; /* Optional text color change */
-        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
-    }
 }
 
 /* Styles for phones (screen width less than or equal to 768px) */
@@ -243,3 +237,8 @@
         padding: 10px 18px;
     }
 } 
+#gonecookies:hover {
+    background-color: #727272; /* Hover background color */
+    color: #333; /* Optional text color change */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
