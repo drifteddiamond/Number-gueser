@@ -162,11 +162,13 @@
     }
 
     #gonecookies {
-        position: fixed; /* Ensures the element stays in place even when scrolling */
-        bottom: 10px; /* Positions it 10px from the bottom */
-        left: 10px; /* Positions it 10px from the left */
+        position: fixed; /* Keeps the button in a fixed position */
+        bottom: 10px; /* Positions it near the bottom of the screen */
+        left: 10px; /* Positions it near the left of the screen */
         font-size: 0.5rem;
-        padding: 10px 20px;
+        padding: 5px 10px; /* Reduced padding for better fit on smaller screens */
+        max-width: 200px; /* Ensures it doesn't stretch across the screen */
+        box-sizing: border-box; /* Includes padding in width calculation */
         background-color: #818181; /* Bright color for emphasis */
         color: #333; /* Text color */
         border: none;
