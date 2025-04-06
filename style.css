@@ -411,10 +411,18 @@ html, body {
     padding: 10px; 
 }
 
-#gonecookies {
+#gonecookies-wrapper {
     position: fixed;
     bottom: 10px;
     left: 10px;
+    width: auto;
+    height: auto;
+    z-index: 9999;
+    pointer-events: none; /* let the button receive clicks, not the wrapper */
+  }
+  
+  #gonecookies {
+    pointer-events: auto; /* allow clicks */
     font-size: 1.2rem;
     line-height: 1;
     padding: 10px 16px;
@@ -429,11 +437,11 @@ html, body {
     max-height: 60px;
     max-width: 90%;
     white-space: nowrap;
-    z-index: 9999;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     appearance: none;
     -webkit-appearance: none;
   }
+  
   
 }
 
