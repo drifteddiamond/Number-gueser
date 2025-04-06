@@ -7,7 +7,8 @@ addEventListener("DOMContentLoaded", (event) => {
     const level = document.getElementById('level');
 
     const cookieScore = readCookie('score');
-    let playerScore = 0;
+    let playerScore = 0
+    let playerreach = 0
 
     // Retrieve score and level from cookies
     const cookieLevel = readCookie('level');
@@ -45,7 +46,7 @@ addEventListener("DOMContentLoaded", (event) => {
 
             if (!isNaN(playerGuess)) {
 
-            if (playerGuess < numbers) {
+            if (playerGuess < numbers - playerreach) {
                 writeText('That number is too low', 'red') 
                 writeguess(playerGuess)
                 playerwrong++
@@ -57,7 +58,7 @@ addEventListener("DOMContentLoaded", (event) => {
                 writeText('Please input a number from the 1-100 range', 'orange') 
             }
 
-                else if (playerGuess > numbers) {
+                else if (playerGuess > numbers + playerreach) {
                     writeText('That number is too high', 'red') 
                     writeguess(playerGuess)
                     playerwrong++
@@ -65,13 +66,37 @@ addEventListener("DOMContentLoaded", (event) => {
                     writeroundscore(guessscore)
                 }
                
-                else if (playerGuess === numbers) {
-                    writeText("You have correctly guessed the number!", 'green')
+                else if (playerGuess === numbers || playerGuess >= numbers - playerreach && playerGuess <= numbers + playerreach) {
+                    let textmessage = "You have correctly guessed the number!"
+                    if (playerreach > 0 && playerGuess !== numbers) {
+                        textmessage = `You guessed within ${playerreach} of the number!`
+                    }
+                    writeText(textmessage, 'green')
                     writeguess(playerGuess)
                     playerScore = calcscore(playerScore, guessscore)
                     writescore(playerScore)
                     writeroundscore(guessscore)
                     numbers = Math.floor(Math.random() * 100) + 1 
+                    if (playerwrong <= 10) {
+                        if (Math.random() <= 0.5) {
+                            writebonus('Bonus: You have gained +5 reach')
+                            playerreach = 5
+                            document.body.style.backgroundColor = 'cyan'
+                            document.getElementById('header').style.backgroundColor = 'cyan'
+                            document.getElementById('input').style.backgroundColor = 'lightcyan'
+                        }
+                        else writebonus(''), playerreach = 0,
+                         document.body.style.backgroundColor = '',
+                         document.getElementById('header').style.backgroundColor = '',
+                         document.getElementById('input').style.backgroundColor = ''
+                    }
+                    if (playerwrong > 10) {
+                        writebonus('')
+                    playerreach = 0
+                    document.body.style.backgroundColor = ''
+                    document.getElementById('header').style.backgroundColor = ''
+                    document.getElementById('input').style.backgroundColor = ''
+                    }
                 }
                 const currentLevel = Math.floor(playerScore / 10000);
     writelevel(`Level: ${currentLevel}`);
@@ -89,6 +114,11 @@ createCookie('level', currentLevel, 10000);
    
     function writeText(text, color) {
         const targetElement = document.getElementById('output') 
+        targetElement.textContent = text 
+        targetElement.style.setProperty('color', color, 'important')
+    }
+    function writebonus(text, color) {
+        const targetElement = document.getElementById('bonus') 
         targetElement.textContent = text 
         targetElement.style.setProperty('color', color, 'important')
     }
