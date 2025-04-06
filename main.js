@@ -134,11 +134,77 @@ createCookie('level', currentLevel);
         currentLevel = 0
         location.reload()
     }
-    const gonecookies = document.getElementById('gonecookies')
+    const gonecookies = document.getElementById('gonecookies');
     gonecookies.addEventListener('click', () => {
-        delall()
-        console.log('cookiesdeleted')
-    })
+        const showPopup = () => {
+            // Create the popup elements
+            const popup = document.createElement("div");
+            const message = document.createElement("p");
+            const yesButton = document.createElement("button");
+            const noButton = document.createElement("button");
+    
+            // Set up the popup content
+            message.textContent = "Are you sure you want to reset? This will permanently delete all of your progress!";
+            yesButton.textContent = "Yes";
+            noButton.textContent = "No";
+    
+            // Style the popup for a modern look
+            popup.style.position = "fixed";
+            popup.style.top = "50%";
+            popup.style.left = "50%";
+            popup.style.transform = "translate(-50%, -50%)";
+            popup.style.backgroundColor = "#ffffff";
+            popup.style.border = "2px solid #4CAF50"; // Green border
+            popup.style.borderRadius = "10px";
+            popup.style.padding = "30px";
+            popup.style.boxShadow = "0px 6px 15px rgba(0, 0, 0, 0.2)";
+            popup.style.width = "300px";
+            popup.style.textAlign = "center";
+            popup.style.fontFamily = "'Arial', sans-serif";
+    
+            // Style the message text
+            message.style.marginBottom = "20px";
+            message.style.fontSize = "18px";
+            message.style.color = "#333";
+    
+            // Style the buttons
+            [yesButton, noButton].forEach(button => {
+                button.style.margin = "10px";
+                button.style.padding = "10px 20px";
+                button.style.border = "none";
+                button.style.borderRadius = "5px";
+                button.style.cursor = "pointer";
+                button.style.fontSize = "16px";
+                button.style.fontFamily = "'Arial', sans-serif";
+            });
+    
+            yesButton.style.backgroundColor = "#4CAF50"; // Green button
+            yesButton.style.color = "#ffffff";
+            noButton.style.backgroundColor = "#f44336"; // Red button
+            noButton.style.color = "#ffffff";
+    
+            // Append elements to the popup
+            popup.appendChild(message);
+            popup.appendChild(yesButton);
+            popup.appendChild(noButton);
+            document.body.appendChild(popup);
+    
+            // Add event listeners to the buttons
+            yesButton.addEventListener("click", () => {
+                delall(); // Call the delall function
+                console.log('cookiesdeleted');
+                document.body.removeChild(popup); // Close the popup
+            });
+    
+            noButton.addEventListener("click", () => {
+                document.body.removeChild(popup); // Close the popup
+            });
+        };
+    
+        // Show the popup
+        showPopup();
+    });
+    
 })
 
 
