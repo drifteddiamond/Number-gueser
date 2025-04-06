@@ -132,7 +132,7 @@ createCookie('level', currentLevel);
         deleteCookie('level')
         currentscore = 0
         currentLevel = 0
-        location.reloade()
+        location.reload()
     }
     const gonecookies = document.getElementById('gonecookies')
     gonecookies.addEventListener('click', () => {
