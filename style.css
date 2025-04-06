@@ -162,19 +162,24 @@
     }
 
     #gonecookies {
-        position: fixed; /* Keeps the button in a fixed position */
-        bottom: 10px; /* Positions it near the bottom of the screen */
-        left: 10px; /* Positions it near the left of the screen */
+        position: fixed; /* Keeps it anchored to the bottom-left corner */
+        bottom: 10px; /* 10px from the bottom */
+        left: 10px; /* 10px from the left */
         font-size: 0.5rem;
-        padding: 5px 10px; /* Reduced padding for better fit on smaller screens */
-        max-width: 200px; /* Ensures it doesn't stretch across the screen */
-        box-sizing: border-box; /* Includes padding in width calculation */
-        background-color: #818181; /* Bright color for emphasis */
+        padding: 5px 10px; /* Adjust padding to avoid excessive size */
+        width: auto; /* Allows the width to adjust to the text content */
+        max-width: 200px; /* Prevents it from stretching too wide */
+        height: auto; /* Ensures height adjusts dynamically to content */
+        text-align: center; /* Aligns text centrally */
+        background-color: #818181; /* Bright background color */
         color: #333; /* Text color */
         border: none;
-        border-radius: 5px;
+        border-radius: 5px; /* Smooth corners */
         cursor: pointer;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box; /* Includes padding in size calculation */
+        overflow: hidden; /* Prevents any content overflow */
+        display: inline-block; /* Ensures the button doesn’t stretch vertically */
     }
     
     
