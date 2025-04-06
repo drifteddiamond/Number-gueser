@@ -415,18 +415,25 @@ html, body {
       background-color: #818181;
       color: #fff;
       border-radius: 5px;
-      display: inline-block;         /* ⬅️ This prevents block stretch */
-      width: auto;                   /* ⬅️ Prevents full-width */
-      height: auto;                  /* ⬅️ Prevents vertical stretch */
-      line-height: 1.2;              /* ⬅️ Clean spacing inside */
-      text-align: center;
-      white-space: nowrap;
-      user-select: none;
-      z-index: 9999;
+      border: none;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
       cursor: pointer;
+  
+      /* 🔒 Absolute anti-stretch fix */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      width: max-content;
+      height: auto;
+      max-height: 100px;
+      max-width: 90%;
+      white-space: nowrap;
+      line-height: normal;
     }
   }
+  
   
   
 }
