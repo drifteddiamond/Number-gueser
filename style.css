@@ -412,27 +412,29 @@ html, body {
 }
 
 #gonecookies {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     left: 10px;
     font-size: 1.2rem;
     line-height: 1;
-    padding: 6px 16px;
+    padding: 10px 16px;
     background-color: #818181;
-    color: #fff;
-    border-radius: 5px;
+    color: white;
     border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
+    border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: max-content;
+    display: inline-block;
+    width: auto;
     height: auto;
+    max-height: 60px;
     max-width: 90%;
     white-space: nowrap;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    appearance: none;
+    -webkit-appearance: none;
   }
+  
 }
 
 @media (min-width: 768px) and (max-width: 1366px) {
