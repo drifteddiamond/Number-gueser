@@ -127,10 +127,14 @@ createCookie('level', currentLevel);
         }
         return score
     }
-    const nocook = document.getElementById('gonecookies')
-    nocook.addEventListener('click', () => {
+    function delall() {
         deleteCookie('score')
         deleteCookie('level')
+    }
+    const gonecookies = document.getElementById('gonecookies')
+    gonecookies.addEventListener('click', () => {
+        delall()
+        console.log('cookiesdeleted')
     })
 })
 
