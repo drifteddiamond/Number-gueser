@@ -15,8 +15,8 @@ html, body {
     transform: translateX(-50%);
     width: 99%; 
     margin: 0; 
-    color: #fff; 
-    background-color: #ffffff; 
+    color: #000; 
+    background-color: #000fff; 
     padding: 10px; 
 }
 
@@ -29,7 +29,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     background-color: #f0f0f0; 
     padding: 10px; 
 }
@@ -43,7 +43,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -56,7 +56,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -69,7 +69,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -78,7 +78,7 @@ html, body {
     text-align: center; 
     display: inline-block;
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -87,7 +87,7 @@ html, body {
     text-align: center; 
     display: inline-block;
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -100,7 +100,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -113,7 +113,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -126,7 +126,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -137,7 +137,7 @@ html, body {
     font-size: 1.5rem;
     padding: 10px 20px;
     background-color: #818181;
-    color: #fff;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -180,7 +180,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
 
@@ -235,7 +235,7 @@ html, body {
         text-align: center; 
         display: inline;
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
 
@@ -253,7 +253,7 @@ html, body {
         text-align: center; 
         display: inline;
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     #level {
@@ -265,7 +265,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     #gonecookies {
@@ -292,8 +292,8 @@ html, body {
     transform: translateX(-50%);
     width: 99%; 
     margin: 0; 
-    color: #fff; 
-    background-color: #ffffff; 
+    color: #000; 
+    background-color: #000fff; 
     padding: 10px; 
 }
 
@@ -306,7 +306,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     background-color: #f0f0f0; 
     padding: 10px; 
 }
@@ -320,7 +320,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -333,7 +333,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -346,7 +346,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -355,7 +355,7 @@ html, body {
     text-align: center; 
     display: inline-block;
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -364,7 +364,7 @@ html, body {
     text-align: center; 
     display: inline-block;
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -377,7 +377,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -390,7 +390,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -403,7 +403,7 @@ html, body {
     transform: translateX(-50%);
     width: 50%; 
     margin: 0; 
-    color: #fff; 
+    color: #000; 
     padding: 10px; 
 }
 
@@ -428,8 +428,8 @@ html, body {
         transform: translateX(-50%);
         width: 99%; 
         margin: 0; 
-        color: #fff; 
-        background-color: #ffffff; 
+        color: #000; 
+        background-color: #000fff; 
         padding: 10px; 
     }
     
@@ -442,7 +442,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         background-color: #f0f0f0; 
         padding: 10px; 
     }
@@ -456,7 +456,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -469,7 +469,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -482,7 +482,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -491,7 +491,7 @@ html, body {
         text-align: center; 
         display: inline-block;
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -500,7 +500,7 @@ html, body {
         text-align: center; 
         display: inline-block;
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -513,7 +513,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -526,7 +526,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
@@ -539,7 +539,7 @@ html, body {
         transform: translateX(-50%);
         width: 50%; 
         margin: 0; 
-        color: #fff; 
+        color: #000; 
         padding: 10px; 
     }
     
