@@ -1,7 +1,10 @@
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
     position: relative;
-}
+  }
+  
 
 /* Default styles for computers */
 #header {
@@ -405,37 +408,28 @@ html, body {
     padding: 10px; 
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    #gonecookies {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      font-size: 1.5rem;
-      padding: 10px 20px;
-      background-color: #818181;
-      color: #fff;
-      border-radius: 5px;
-      border: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-      cursor: pointer;
-  
-      /* 🔒 Absolute anti-stretch fix */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      width: max-content;
-      height: auto;
-      max-height: 100px;
-      max-width: 90%;
-      white-space: nowrap;
-      line-height: normal;
-    }
+#gonecookies {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 6px 16px;
+    background-color: #818181;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: auto;
+    max-width: 90%;
+    white-space: nowrap;
   }
-  
-  
-  
 }
 
 @media (min-width: 768px) and (max-width: 1366px) {
