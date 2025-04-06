@@ -402,17 +402,19 @@
 
 #gonecookies {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     left: 10px;
-    font-size: 0.5rem;
+    font-size: 1.5rem;
     padding: 10px 20px;
-    background-color: #818181; /* Bright color for emphasis */
-    color: #333; /* Text color */
+    width: fit-content;
+    background-color: #818181;
+    color: #333;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 }
 
 @media (min-width: 768px) and (max-width: 1366px) {
