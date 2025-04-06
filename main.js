@@ -1,26 +1,35 @@
 addEventListener("DOMContentLoaded", (event) => {
-    let numbers = Math.floor(Math.random() * 100) + 1 
+    let numbers = Math.floor(Math.random() * 100) + 1;
 
-    const input = document.getElementById('input') 
-    const totalscore = document.getElementById('totalscore') 
-    const total = parseInt(totalscore, 10) 
+    const input = document.getElementById('input');
+    const totalscore = document.getElementById('totalscore');
+    const total = parseInt(totalscore, 10);
+    const level = document.getElementById('level');
 
-    const cookieScore = readCookie('score')
+    const cookieScore = readCookie('score');
+    let playerScore = 0;
 
-    let playerScore = 0
-
-    console.log(cookieScore)
+    // Retrieve score and level from cookies
+    const cookieLevel = readCookie('level');
+    if (cookieLevel !== null && cookieLevel !== undefined && !isNaN(cookieLevel)) {
+        writelevel(`Level: ${cookieLevel}`);
+    } else {
+        writelevel('Level: 0'); // Default level
+    }
 
     if (cookieScore !== null && cookieScore !== undefined && !isNaN(cookieScore)) {
-        playerScore = parseInt(cookieScore)
+        playerScore = parseInt(cookieScore);
+    } else {
+        playerScore = 0; // Default score
     }
-    
-    console.log(cookieScore)
+    writescore(playerScore);
 
-    let playerwrong = 0
-    let guessscore = 5000
-    writescore(playerScore)
-    writeroundscore(guessscore)
+    console.log(cookieScore);
+
+    let playerwrong = 0;
+    let guessscore = 5000;
+    writeroundscore(guessscore);
+
    
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -64,6 +73,11 @@ addEventListener("DOMContentLoaded", (event) => {
                     writeroundscore(guessscore)
                     numbers = Math.floor(Math.random() * 100) + 1 
                 }
+                const currentLevel = Math.floor(playerScore / 10000);
+    writelevel(`Level: ${currentLevel}`);
+    deleteCookie('level'); // Remove any old cookie
+createCookie('level', currentLevel);
+
             }
                 else {
                     writeText('Please write a number or new to get a new number')
@@ -81,6 +95,10 @@ addEventListener("DOMContentLoaded", (event) => {
         const targetElement = document.getElementById('guessput') 
         targetElement.textContent = text 
     }
+    function writelevel(text) {
+        const targetElement = document.getElementById('level') 
+        targetElement.textContent = text 
+    }
     function writescore(text) {
         const targetElement = document.getElementById('totalscore')
         targetElement.textContent = text 
@@ -96,9 +114,10 @@ addEventListener("DOMContentLoaded", (event) => {
         if (currentscore < 0) {
             currentscore = 0
         }
-        deleteCookie('score')
-        createCookie('score', currentscore)
-        return currentscore
+        deleteCookie('score'); // Delete old cookie (if exists)
+    createCookie('score', currentscore); // Create a new one with updated score
+    return currentscore;
+
     }
     function calcwrong(wrongcount, score) {
         score = score - 300
