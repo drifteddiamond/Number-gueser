@@ -122,6 +122,12 @@
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    #gonecookies:hover {
+        background-color: #727272; /* Hover background color */
+        color: #333; /* Optional text color change */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    }
 }
 
 /* Styles for phones (screen width less than or equal to 768px) */
@@ -156,8 +162,9 @@
     }
 
     #gonecookies {
-        bottom: 10px;
-        left: 10px;
+        position: fixed; /* Ensures the element stays in place even when scrolling */
+        bottom: 10px; /* Positions it 10px from the bottom */
+        left: 10px; /* Positions it 10px from the left */
         font-size: 0.5rem;
         padding: 10px 20px;
         background-color: #818181; /* Bright color for emphasis */
@@ -167,6 +174,7 @@
         cursor: pointer;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+    
     
 }
 /* Styles for landscape phones */
@@ -235,8 +243,3 @@
         padding: 10px 18px;
     }
 } 
-#gonecookies:hover {
-    background-color: #727272; /* Hover background color */
-    color: #333; /* Optional text color change */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
-}
