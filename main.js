@@ -77,7 +77,7 @@ addEventListener("DOMContentLoaded", (event) => {
                     writescore(playerScore)
                     writeroundscore(guessscore)
                     numbers = Math.floor(Math.random() * 100) + 1 
-                    if (playerwrong <= 10) {
+                    if (playerwrong <= 6) {
                         if (Math.random() <= 0.5) {
                             writebonus('Bonus: You have gained +5 reach')
                             playerreach = 5
@@ -90,7 +90,7 @@ addEventListener("DOMContentLoaded", (event) => {
                          document.getElementById('header').style.backgroundColor = '',
                          document.getElementById('input').style.backgroundColor = ''
                     }
-                    if (playerwrong > 10) {
+                    if (playerwrong > 6) {
                         writebonus('')
                     playerreach = 0
                     document.body.style.backgroundColor = ''
