@@ -37,7 +37,7 @@ addEventListener("DOMContentLoaded", (event) => {
             input.value = '' 
            
             if (playerinput === 'new') {numbers = Math.floor(Math.random() * 100) + 1 
-                writeText('New number given') 
+                writeText('New number given', 'lime') 
                 return 
             }
 
@@ -46,7 +46,7 @@ addEventListener("DOMContentLoaded", (event) => {
             if (!isNaN(playerGuess)) {
 
             if (playerGuess < numbers) {
-                writeText('That number is too low') 
+                writeText('That number is too low', 'red') 
                 writeguess(playerGuess)
                 playerwrong++
                 guessscore = calcwrong(playerwrong, guessscore)
@@ -54,11 +54,11 @@ addEventListener("DOMContentLoaded", (event) => {
             }
 
             else if (playerGuess > 100) {
-                writeText('Please input a number from the 1-100 range') 
+                writeText('Please input a number from the 1-100 range', 'orange') 
             }
 
                 else if (playerGuess > numbers) {
-                    writeText('That number is too high') 
+                    writeText('That number is too high', 'red') 
                     writeguess(playerGuess)
                     playerwrong++
                     guessscore = calcwrong(playerwrong, guessscore)
@@ -66,7 +66,7 @@ addEventListener("DOMContentLoaded", (event) => {
                 }
                
                 else if (playerGuess === numbers) {
-                    writeText("You have correctly guessed the number!")
+                    writeText("You have correctly guessed the number!", 'green')
                     writeguess(playerGuess)
                     playerScore = calcscore(playerScore, guessscore)
                     writescore(playerScore)
@@ -80,16 +80,17 @@ createCookie('level', currentLevel, 10000);
 
             }
                 else {
-                    writeText('Please write a number or new to get a new number')
+                    writeText('Please write a number or new to get a new number', 'orange')
                 }
             }
         }) 
     
 
    
-    function writeText(text) {
+    function writeText(text, color) {
         const targetElement = document.getElementById('output') 
         targetElement.textContent = text 
+        targetElement.style.setProperty('color', color, 'important')
     }
     function writeguess(text) {
         const targetElement = document.getElementById('guessput') 
