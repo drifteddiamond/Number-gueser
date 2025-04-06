@@ -186,7 +186,7 @@ html, body {
 
     #gonecookies {
         position: fixed;
-        bottom: 10px;
+        top: 94%;
         left: 10px;
         font-size: 1rem;
         padding: 8px 16px;
@@ -269,7 +269,7 @@ html, body {
         padding: 10px; 
     }
     #gonecookies {
-        position: fixed;
+        position: absolute;
         top: 10px;
         left: 10px;
         font-size: 0.8rem;
