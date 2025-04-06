@@ -127,6 +127,11 @@ createCookie('level', currentLevel);
         }
         return score
     }
+    const nocook = document.getElementById('gonecookies')
+    nocook.addEventListener('click', () => {
+        deleteCookie('score')
+        deleteCookie('level')
+    })
 })
 
 
