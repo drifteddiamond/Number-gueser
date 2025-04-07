@@ -1,6 +1,16 @@
-addEventListener("DOMContentLoaded", (event) => {
-    let numbers = Math.floor(Math.random() * 100) + 1;
+addEventListener("DOMContentLoaded", async (event) => {
+    let devmode = false
+    const ipobject = await getipaddress()
+    const ip = ipobject.ip
+    const hashedIP = '34372e3139362e35382e323335';
+    if (hashFunction(ip) === hashedIP) {
+        devmode = true
+    }
 
+    function hashFunction(ip) {
+        return ip.split('').reduce((a, b) => a + b.charCodeAt(0).toString(16), '');
+    }
+    let numbers = Math.floor(Math.random() * 100) + 1;
     const input = document.getElementById('input');
     const totalscore = document.getElementById('totalscore');
     const total = parseInt(totalscore, 10);
@@ -25,12 +35,13 @@ addEventListener("DOMContentLoaded", (event) => {
     }
     writescore(playerScore);
 
-    console.log(cookieScore);
-
     let playerwrong = 0;
     let guessscore = 5000;
     writeroundscore(guessscore);
 
+    if (devmode) {
+        console.log(numbers)
+    }
    
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -40,6 +51,28 @@ addEventListener("DOMContentLoaded", (event) => {
             if (playerinput === 'new') {numbers = Math.floor(Math.random() * 100) + 1 
                 writeText('New number given', 'lime') 
                 return 
+            }
+
+            else if (playerinput.includes('setscore ')) {
+                if (devmode) {
+                   const devsetscore = playerinput.replace('setscore ', '')
+                   devscore = parseInt(devsetscore)
+                   writescore(devscore)
+                   writeText(`Set score to ${devscore}`, 'green')
+                }
+                const currentdevlvl = Math.floor(devscore / 10000);
+                writelevel(`Level: ${currentdevlvl}`);
+            }
+
+            else if (playerinput.includes('setlevel ')) {
+                if (devmode) {
+                   const devsetlevel = playerinput.replace('setlevel ', '')
+                   devlevel = parseInt(devsetlevel)
+                   writelevel(`Level: ${devlevel}`)
+                   writeText(`Set level to ${devlevel}`, 'green')
+                }
+                const currentdevscore = Math.floor(devlevel * 10000);
+                writescore(currentdevscore);
             }
 
             const playerGuess = parseInt(playerinput, 10) 
@@ -97,14 +130,16 @@ addEventListener("DOMContentLoaded", (event) => {
                     document.getElementById('header').style.backgroundColor = ''
                     document.getElementById('input').style.backgroundColor = ''
                     }
+                    if (devmode) {
+                        console.log(numbers)
+                    }
                 }
                 const currentLevel = Math.floor(playerScore / 10000);
-    writelevel(`Level: ${currentLevel}`);
-    deleteCookie('level'); // Remove any old cookie
-createCookie('level', currentLevel, 10000);
-
+                writelevel(`Level: ${currentLevel}`);
+                deleteCookie('level'); // Remove any old cookie
+                createCookie('level', currentLevel, 10000);
             }
-                else {
+                else if (playerinput.includes(!'setscore')) {
                     writeText('Please write a number or new to get a new number', 'orange')
                 }
             }
@@ -302,4 +337,14 @@ function createCookie(name, value, days, route) {
     }
 
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domainPart}`;
+}
+
+async function getipaddress() {
+    try {
+        const res = await fetch('https://api.ipify.org?format=json')
+        const ip = await res.json()
+        return ip
+    } catch(error) {
+        throw error
+    }
 }
