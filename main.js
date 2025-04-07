@@ -48,31 +48,33 @@ addEventListener("DOMContentLoaded", async (event) => {
             const playerinput = input.value.trim() 
             input.value = '' 
            
-            if (playerinput === 'new') {numbers = Math.floor(Math.random() * 100) + 1 
+            if (playerinput.toLowerCase() === 'new') {numbers = Math.floor(Math.random() * 100) + 1 
                 writeText('New number given', 'lime') 
                 return 
             }
 
-            else if (playerinput.includes('setscore ')) {
+            else if (playerinput.toLowerCase().includes('setscore ')) {
                 if (devmode) {
-                   const devsetscore = playerinput.replace('setscore ', '')
+                   const devsetscore = playerinput.toLowerCase().replace('setscore ', '')
                    devscore = parseInt(devsetscore)
                    writescore(devscore)
                    writeText(`Set score to ${devscore}`, 'green')
                 }
                 const currentdevlvl = Math.floor(devscore / 10000);
                 writelevel(`Level: ${currentdevlvl}`);
+                return
             }
 
-            else if (playerinput.includes('setlevel ')) {
+            else if (playerinput.toLowerCase().includes('setlevel ')) {
                 if (devmode) {
-                   const devsetlevel = playerinput.replace('setlevel ', '')
+                   const devsetlevel = playerinput.toLowerCase().replace('setlevel ', '')
                    devlevel = parseInt(devsetlevel)
                    writelevel(`Level: ${devlevel}`)
                    writeText(`Set level to ${devlevel}`, 'green')
                 }
                 const currentdevscore = Math.floor(devlevel * 10000);
                 writescore(currentdevscore);
+                return
             }
 
             const playerGuess = parseInt(playerinput, 10) 
@@ -139,8 +141,8 @@ addEventListener("DOMContentLoaded", async (event) => {
                 deleteCookie('level'); // Remove any old cookie
                 createCookie('level', currentLevel, 10000);
             }
-                else if (playerinput.includes(!'setscore')) {
-                    writeText('Please write a number or new to get a new number', 'orange')
+                else {
+                    writeText('Please write a number or "new" to get a new number', 'orange')
                 }
             }
         }) 
