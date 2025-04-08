@@ -1,4 +1,13 @@
 addEventListener("DOMContentLoaded", async (event) => {
+    // Create a link element
+const faviconLink = document.createElement("link");
+faviconLink.rel = "icon"; // Specify it's a favicon
+faviconLink.type = "image/png"; // File type
+faviconLink.href = "Fav icon.png"; // Your favicon file name
+
+// Append the link element to the head
+document.head.appendChild(faviconLink);
+
     let devmode = false
     let givenumber = false
     const ipobject = await getipaddress()
@@ -23,21 +32,21 @@ addEventListener("DOMContentLoaded", async (event) => {
     let playerreach = 0
     const lootTable = [
         {
-            name: 'Blade',
+            name: 'Blade🗡️',
             description: 'Gives extra reach',
             modifier: getModifier,
             color: 'rgb(97, 17, 17)',
             inputcolor: 'rgb(192, 94, 94)'
         },
         {
-            name: 'Mace',
+            name: 'Mace⚒️',
             description: 'Gives extra reach',
             modifier: getModifier,
             color: 'rgb(106, 62, 119)',
             inputcolor: 'rgb(197, 156, 209)'
         },
         {
-            name: 'Scythe',
+            name: 'Scythe⛏️',
             description: 'Gives extra reach',
             modifier: getModifier,
             color: 'rgb(68, 93, 99)',
@@ -46,11 +55,11 @@ addEventListener("DOMContentLoaded", async (event) => {
     ]
     function getModifier() {
         const modifiers = [
-            { name: 'dullness', value: 1, attribute: 'reach', chance: 30 },
-            { name: 'sharpness', value: 2, attribute: 'reach', chance: 25 },
-            { name: 'toxin', value: 3, attribute: 'reach', chance: 20 },
-            { name: 'death', value: 5, attribute: 'reach', chance: 15 },
-            { name: 'fatality', value: 10, attribute: 'reach', chance: 10 }
+            { name: 'dullness💩', value: 1, attribute: 'reach', chance: 30 },
+            { name: 'sharpness🩸', value: 2, attribute: 'reach', chance: 25 },
+            { name: 'toxin☠️', value: 3, attribute: 'reach', chance: 20 },
+            { name: 'death🪦', value: 5, attribute: 'reach', chance: 15 },
+            { name: 'fatality💀', value: 10, attribute: 'reach', chance: 10 }
         ];
     
         // Create a cumulative array of chances
