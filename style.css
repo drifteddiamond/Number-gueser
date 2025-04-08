@@ -61,7 +61,7 @@ html, body {
 }
 
 #bonus {
-    font-size: 3.8rem; 
+    font-size: 2.5rem; 
     text-align: center; 
     position: absolute; 
     top: 30%; 
@@ -215,7 +215,7 @@ html, body {
     }
 
     #bonus {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         width: 80%;
         padding: 8px;
     }
@@ -343,7 +343,7 @@ html, body {
 }
 
 #bonus {
-    font-size: 3rem; 
+    font-size: 1.7rem; 
     text-align: center; 
     position: absolute; 
     top: 30%; 
@@ -479,7 +479,7 @@ html, body {
     }
     
     #bonus {
-        font-size: 3rem; 
+        font-size: 2rem; 
         text-align: center; 
         position: absolute; 
         top: 30%; 

@@ -1,10 +1,12 @@
 addEventListener("DOMContentLoaded", async (event) => {
     let devmode = false
+    let givenumber = false
     const ipobject = await getipaddress()
     const ip = ipobject.ip
     const hashedIP = '34372e3139362e35382e323335';
     if (hashFunction(ip) === hashedIP) {
         devmode = true
+        givenumber = true
     }
 
     function hashFunction(ip) {
@@ -19,6 +21,59 @@ addEventListener("DOMContentLoaded", async (event) => {
     const cookieScore = readCookie('score');
     let playerScore = 0
     let playerreach = 0
+    const lootTable = [
+        {
+            name: 'Blade',
+            description: 'Gives extra reach',
+            modifier: getModifier,
+            color: 'rgb(97, 17, 17)',
+            inputcolor: 'rgb(192, 94, 94)'
+        },
+        {
+            name: 'Mace',
+            description: 'Gives extra reach',
+            modifier: getModifier,
+            color: 'rgb(106, 62, 119)',
+            inputcolor: 'rgb(197, 156, 209)'
+        },
+        {
+            name: 'Scythe',
+            description: 'Gives extra reach',
+            modifier: getModifier,
+            color: 'rgb(68, 93, 99)',
+            inputcolor: 'rgb(173, 202, 209)'
+        }
+    ]
+    function getModifier() {
+        const modifiers = [
+            { name: 'dullness', value: 1, attribute: 'reach', chance: 30 },
+            { name: 'sharpness', value: 2, attribute: 'reach', chance: 25 },
+            { name: 'toxin', value: 3, attribute: 'reach', chance: 20 },
+            { name: 'death', value: 5, attribute: 'reach', chance: 15 },
+            { name: 'fatality', value: 10, attribute: 'reach', chance: 10 }
+        ];
+    
+        // Create a cumulative array of chances
+        const cumulative = [];
+        let sum = 0;
+    
+        for (const modifier of modifiers) {
+            sum += modifier.chance;
+            cumulative.push(sum);
+        }
+        // Generate a random number between 0 and 100
+        const randomnumber = Math.random() * 100;
+    
+        // Find the correct modifier based on the random number
+        for (let i = 0; i < cumulative.length; i++) {
+            if (randomnumber <= cumulative[i]) {
+                console.log(`Selected Modifier: ${modifiers[i].name}`);
+                console.log(`Chance: ${modifiers[i].chance}%`);
+    
+                return modifiers[i];
+            }
+        }
+    }
 
     // Retrieve score and level from cookies
     const cookieLevel = readCookie('level');
@@ -39,14 +94,14 @@ addEventListener("DOMContentLoaded", async (event) => {
     let guessscore = 5000;
     writeroundscore(guessscore);
 
-    if (devmode) {
+    if (givenumber) {
         console.log(numbers)
     }
    
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             const playerinput = input.value.trim() 
-            input.value = '' 
+            input.value = ''
            
             if (playerinput.toLowerCase() === 'new') {numbers = Math.floor(Math.random() * 100) + 1 
                 writeText('New number given', 'lime') 
@@ -113,12 +168,14 @@ addEventListener("DOMContentLoaded", async (event) => {
                     writeroundscore(guessscore)
                     numbers = Math.floor(Math.random() * 100) + 1 
                     if (playerwrong <= 6) {
-                        if (Math.random() <= 0.5) {
-                            writebonus('Bonus: You have gained +5 reach')
-                            playerreach = 5
-                            document.body.style.backgroundColor = 'cyan'
-                            document.getElementById('header').style.backgroundColor = 'cyan'
-                            document.getElementById('input').style.backgroundColor = 'lightcyan'
+                        if (Math.random() <= 0.62) {
+                            const loot = lootTable[Math.floor(Math.random() * lootTable.length)]
+                            const lootModifier = getModifier()
+                            writebonus(`Bonus: You have earned the ${loot.name} of ${lootModifier.name}`, 'gold')
+                            playerreach = lootModifier.value
+                            document.body.style.backgroundColor = loot.color
+                            document.getElementById('header').style.backgroundColor = loot.color
+                            document.getElementById('input').style.backgroundColor = loot.inputcolor
                         }
                         else writebonus(''), playerreach = 0,
                          document.body.style.backgroundColor = '',
@@ -132,7 +189,7 @@ addEventListener("DOMContentLoaded", async (event) => {
                     document.getElementById('header').style.backgroundColor = ''
                     document.getElementById('input').style.backgroundColor = ''
                     }
-                    if (devmode) {
+                    if (givenumber) {
                         console.log(numbers)
                     }
                 }
