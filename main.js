@@ -176,8 +176,8 @@ document.head.appendChild(faviconLink);
                     writescore(playerScore)
                     writeroundscore(guessscore)
                     numbers = Math.floor(Math.random() * 100) + 1 
-                    if (playerwrong <= 6) {
-                        if (Math.random() <= 0.62) {
+                    if (playerwrong < 7) {
+                        if (Math.random() <= 0.82) {
                             const loot = lootTable[Math.floor(Math.random() * lootTable.length)]
                             const lootModifier = getModifier()
                             writebonus(`Bonus: You have earned the ${loot.name} of ${lootModifier.name}`, 'gold')
