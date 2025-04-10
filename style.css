@@ -177,4 +177,31 @@ html, body {
       padding: 10px 20px;
     }
   }
+
+  .item {
+    border: 3px solid #32b8c2;
+    border-radius: 15px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    z-index: 50;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  #item1 {
+    right: 125px;
+  }
+
+  #item2 {
+    right: 65px;
+  }
+
+  #item3 {
+    right: 5px;
+  }
   
+  .item:hover{
+    cursor: pointer;
+  }

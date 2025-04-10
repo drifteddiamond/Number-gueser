@@ -5,6 +5,53 @@ faviconLink.rel = "icon"; // Specify it's a favicon
 faviconLink.type = "image/png"; // File type
 faviconLink.href = "Fav icon.png"; // Your favicon file name
 
+const items = document.querySelectorAll('.item')
+const itemslots = 3
+items.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        let loot = null
+        let itemIndex = 0
+        if (e.target.id === 'item1') {
+            loot = itemsArray[0]
+        }
+        if (e.target.id === 'item2') {
+            loot = itemsArray[1]
+            itemIndex = 1
+        }
+        if (e.target.id === 'item3') {
+            loot = itemsArray[2]
+            itemIndex = 2
+        }
+        if (loot === null || loot === undefined){
+            return
+        }
+        playerreach = loot.modifier.value
+        document.body.style.backgroundColor = loot.color
+        document.getElementById('header').style.backgroundColor = loot.color
+        document.getElementById('input').style.backgroundColor = loot.inputcolor
+        writebonus(`You have used the ${loot.name} of ${loot.modifier.name}`)
+        itemsArray.splice(itemIndex, 1)
+        applyItems()
+        if (loot.name === 'Blade🗡️') {
+            const audio = new Audio('bladesfx.mp3')
+            audio.play()
+        }
+        if (loot.name === 'Mace⚒️') {
+            const audio = new Audio('macesfx.mp3')
+            audio.play()
+        }
+        if (loot.name === 'Scythe⛏️') {
+            const audio = new Audio('scythesfx.mp3')
+            audio.play()
+        }
+    })
+})
+let item1 = null
+let item2 = null
+let item3 = null
+
+const itemsArray = []
+
 // Append the link element to the head
 document.head.appendChild(faviconLink);
 
@@ -34,23 +81,23 @@ document.head.appendChild(faviconLink);
         {
             name: 'Blade🗡️',
             description: 'Gives extra reach',
-            modifier: getModifier,
             color: 'rgb(97, 17, 17)',
-            inputcolor: 'rgb(192, 94, 94)'
+            inputcolor: 'rgb(192, 94, 94)',
+            icon: '🗡️'
         },
         {
             name: 'Mace⚒️',
             description: 'Gives extra reach',
-            modifier: getModifier,
             color: 'rgb(106, 62, 119)',
-            inputcolor: 'rgb(197, 156, 209)'
+            inputcolor: 'rgb(197, 156, 209)',
+            icon: '⚒️'
         },
         {
             name: 'Scythe⛏️',
             description: 'Gives extra reach',
-            modifier: getModifier,
             color: 'rgb(68, 93, 99)',
-            inputcolor: 'rgb(173, 202, 209)'
+            inputcolor: 'rgb(173, 202, 209)',
+            icon: '⛏️'
         }
     ]
     function getModifier() {
@@ -123,6 +170,9 @@ document.head.appendChild(faviconLink);
                    devscore = parseInt(devsetscore)
                    writescore(devscore)
                    writeText(`Set score to ${devscore}`, 'green')
+                   if (playerreach === 0) {
+                    writebonus('')
+                }                
                 }
                 const currentdevlvl = Math.floor(devscore / 10000);
                 writelevel(`Level: ${currentdevlvl}`);
@@ -135,6 +185,9 @@ document.head.appendChild(faviconLink);
                    devlevel = parseInt(devsetlevel)
                    writelevel(`Level: ${devlevel}`)
                    writeText(`Set level to ${devlevel}`, 'green')
+                   if (playerreach === 0) {
+                    writebonus('')
+                }                
                 }
                 const currentdevscore = Math.floor(devlevel * 10000);
                 writescore(currentdevscore);
@@ -151,6 +204,9 @@ document.head.appendChild(faviconLink);
                 playerwrong++
                 guessscore = calcwrong(playerwrong, guessscore)
                 writeroundscore(guessscore)
+                if (playerreach === 0) {
+                    writebonus('')
+                }
             }
 
             else if (playerGuess > 100) {
@@ -163,6 +219,9 @@ document.head.appendChild(faviconLink);
                     playerwrong++
                     guessscore = calcwrong(playerwrong, guessscore)
                     writeroundscore(guessscore)
+                    if (playerreach === 0) {
+                        writebonus('')
+                    }                    
                 }
                
                 else if (playerGuess === numbers || playerGuess >= numbers - playerreach && playerGuess <= numbers + playerreach) {
@@ -176,15 +235,21 @@ document.head.appendChild(faviconLink);
                     writescore(playerScore)
                     writeroundscore(guessscore)
                     numbers = Math.floor(Math.random() * 100) + 1 
-                    if (playerwrong < 7) {
-                        if (Math.random() <= 0.82) {
+                    if (playerwrong < 6) {
+                        if (Math.random() <= 0.75) {
                             const loot = lootTable[Math.floor(Math.random() * lootTable.length)]
-                            const lootModifier = getModifier()
-                            writebonus(`Bonus: You have earned the ${loot.name} of ${lootModifier.name}`, 'gold')
-                            playerreach = lootModifier.value
-                            document.body.style.backgroundColor = loot.color
-                            document.getElementById('header').style.backgroundColor = loot.color
-                            document.getElementById('input').style.backgroundColor = loot.inputcolor
+                            loot.modifier = getModifier()
+                            writebonus(`Bonus: You have earned the ${loot.name} of ${loot.modifier.name}`, 'gold')
+                         if (writebonus === `You have used the ${loot.name} of ${loot.modifier.name}`) {
+                            writebonus('')
+                         }
+                         document.body.style.backgroundColor = '',
+                         document.getElementById('header').style.backgroundColor = '',
+                         document.getElementById('input').style.backgroundColor = ''
+                            if (itemsArray.length < 3) {
+                                itemsArray.push(loot)
+                                applyItems()
+                            }
                         }
                         else writebonus(''), playerreach = 0,
                          document.body.style.backgroundColor = '',
@@ -198,6 +263,7 @@ document.head.appendChild(faviconLink);
                     document.getElementById('header').style.backgroundColor = ''
                     document.getElementById('input').style.backgroundColor = ''
                     }
+                    playerwrong = 0
                     if (givenumber) {
                         console.log(numbers)
                     }
@@ -252,6 +318,21 @@ document.head.appendChild(faviconLink);
     createCookie('score', currentscore, 10000); // Create a new one with updated score
     return currentscore;
 
+    }
+    function applyItems() {
+        for (let x = 0; x < itemslots; x++) {
+            if (itemsArray[x] === null || itemsArray[x] === undefined) {
+                const itemslot = document.getElementById(`item${x + 1}`)
+                itemslot.innerHTML = ''
+            } else {
+                const itemslot = document.getElementById(`item${x + 1}`)
+                itemslot.innerHTML = itemsArray[x].icon
+            }
+        }
+        // itemsArray.forEach((element, index) => {
+        //    const itemslot = document.getElementById(`item${index + 1}`)
+        //    itemslot.innerHTML = itemsArray[index].icon
+        // });
     }
     function calcwrong(wrongcount, score) {
         score = score - 300
