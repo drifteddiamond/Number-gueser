@@ -32,8 +32,6 @@ items.forEach((item) => {
         writebonus(`You have used the ${loot.name} of ${loot.modifier.name}`)
         itemsArray.splice(itemIndex, 1)
         applyItems()
-        deleteCookie('loot')
-        createCookie('loot', JSON.stringify(itemsArray), 10000)
 
         if (loot.name === 'Blade🗡️') {
             const audio = new Audio('bladesfx.mp3')
@@ -264,6 +262,9 @@ document.head.appendChild(faviconLink);
                             if (itemsArray.length < 3) {
                                 itemsArray.push(loot)
                                 applyItems()
+                                deleteCookie('loot')
+                                createCookie('loot', JSON.stringify(itemsArray), 10000)
+
                             }
                         }
                         else writebonus(''), playerreach = 0,
