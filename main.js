@@ -32,6 +32,9 @@ items.forEach((item) => {
         writebonus(`You have used the ${loot.name} of ${loot.modifier.name}`)
         itemsArray.splice(itemIndex, 1)
         applyItems()
+        deleteCookie('loot')
+        createCookie('loot', JSON.stringify(itemsArray), 10000)
+
         if (loot.name === 'Blade🗡️') {
             const audio = new Audio('bladesfx.mp3')
             audio.play()
@@ -51,6 +54,18 @@ let item2 = null
 let item3 = null
 
 const itemsArray = []
+
+const lootCookie = readCookie('loot')
+if (lootCookie) {
+    try {
+        const savedItems = JSON.parse(lootCookie)
+        savedItems.forEach(item => itemsArray.push(item))
+        applyItems()
+    } catch (err) {
+        console.error('Error loading saved loot:', err)
+    }
+}
+
 
 // Append the link element to the head
 document.head.appendChild(faviconLink);
@@ -345,6 +360,9 @@ document.head.appendChild(faviconLink);
     function delall() {
         deleteCookie('score')
         deleteCookie('level')
+        deleteCookie('loot')
+        itemsArray.length = 0
+        applyItems()
         currentscore = 0
         currentLevel = 0
         location.reload()
