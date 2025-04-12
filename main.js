@@ -70,6 +70,7 @@ if (lootCookie) {
 // Append the link element to the head
 document.head.appendChild(faviconLink);
 
+    let powernumber = 1
     let devmode = false
     let givenumber = false
     const ipobject = await getipaddress()
@@ -252,23 +253,22 @@ document.head.appendChild(faviconLink);
                     numbers = Math.floor(Math.random() * 100) + 1 
                     if (playerwrong < 6) {
                         if (Math.random() <= 0.75) {
-                            const loot = lootTable[Math.floor(Math.random() * lootTable.length)]
-                            loot.modifier = getModifier()
-                            writebonus(`Bonus: You have earned the ${loot.name} of ${loot.modifier.name}`, 'gold')
-                         if (writebonus === `You have used the ${loot.name} of ${loot.modifier.name}`) {
-                            writebonus('')
-                         }
-                         document.body.style.backgroundColor = '',
-                         document.getElementById('header').style.backgroundColor = '',
-                         document.getElementById('input').style.backgroundColor = ''
-                            if (itemsArray.length < 3) {
-                                itemsArray.push(loot)
-                                applyItems()
-                                deleteCookie('loot')
-                                createCookie('loot', JSON.stringify(itemsArray), 10000)
-
+                            const rand = Math.random()
+                            let powernumber = 1
+                        
+                            if (rand <= 0.1) {
+                                powernumber = 3
+                            } else if (rand <= 0.3) {
+                                powernumber = 2
                             }
-                        }
+                        
+                            for (let x = 0; x < powernumber; x++) {
+                                givepower()
+                            }
+                            if (powernumber > 1) {
+                                writebonus(`You have earned ${powernumber} powerups`)
+                            }
+                        }                        
                         else writebonus(''), playerreach = 0,
                          document.body.style.backgroundColor = '',
                          document.getElementById('header').style.backgroundColor = '',
@@ -325,6 +325,24 @@ document.head.appendChild(faviconLink);
         const targetElement = document.getElementById('roundscore')
         targetElement.textContent = text 
     }
+    function givepower() {
+        const loot = lootTable[Math.floor(Math.random() * lootTable.length)]
+                            loot.modifier = getModifier()
+                            writebonus(`Bonus: You have earned the ${loot.name} of ${loot.modifier.name}`, 'gold')
+                         if (writebonus === `You have used the ${loot.name} of ${loot.modifier.name}`) {
+                            writebonus('')
+                         }
+                         document.body.style.backgroundColor = '',
+                         document.getElementById('header').style.backgroundColor = '',
+                         document.getElementById('input').style.backgroundColor = ''
+                            if (itemsArray.length < 3) {
+                                itemsArray.push(loot)
+                                applyItems()
+                                deleteCookie('loot')
+                                createCookie('loot', JSON.stringify(itemsArray), 10000)
+
+                            }
+    }
     function calcscore(currentscore, addscore) {
         currentscore = currentscore + addscore
         console.log(`calcscore currentscore: ${currentscore} addscore: ${addscore}`)
@@ -342,15 +360,13 @@ document.head.appendChild(faviconLink);
             if (itemsArray[x] === null || itemsArray[x] === undefined) {
                 const itemslot = document.getElementById(`item${x + 1}`)
                 itemslot.innerHTML = ''
+                itemslot.title = ''
             } else {
                 const itemslot = document.getElementById(`item${x + 1}`)
                 itemslot.innerHTML = itemsArray[x].icon
+                itemslot.title = `${itemsArray[x].name} of ${itemsArray[x].modifier.name}`
             }
         }
-        // itemsArray.forEach((element, index) => {
-        //    const itemslot = document.getElementById(`item${index + 1}`)
-        //    itemslot.innerHTML = itemsArray[index].icon
-        // });
     }
     function calcwrong(wrongcount, score) {
         score = score - 300
